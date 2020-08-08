@@ -1,0 +1,11 @@
+<div class="spacing-module"> 
+     {% set spacingD = block.desktop %}
+    {% if spacingD %}
+        <div class="spacing-module-desktop" style="height: {{ spacingD }}px;">   </div>      
+    {% endif %}
+    {% set spacingM = block.mobile %}
+    {% if spacingM %}
+        <div class="spacing-module-mobile" style="height: {{ spacingM }}px;">   </div>      
+    {% endif %}
+   
+</div>    

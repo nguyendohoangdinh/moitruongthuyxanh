@@ -1,0 +1,46 @@
+ 
+  {% set formModuleimage = block.formModuleimage.one() %}
+ 
+ <div id="contact-form-section" class="contact-form" style="background: transparent url({{ formModuleimage.url }}); background-repeat: no-repeat; background-size: cover;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5" id="contact-background">
+                    
+                        {% if block.formModulesubtitle %}  
+                            <h4 class="section-title">{{ block.formModulesubtitle }}</h4>
+                        {% endif %} 
+                         {% if block.formModuletitle %} 
+                            <h2 class="section-title-header h1">{{ block.formModuletitle }}</h2>
+                        {% endif %}  
+                         {% if block.formModuledescription %}  
+                              <p class="desc-section-moving">{{ block.formModuledescription }}</p>
+                        {% endif %}  
+                </div>
+                <div class="col-sm-7">
+                    <div id="contact-form-right">
+                        <div class="get-started">
+                             {% set formModuleformIcon = block.formModuleformIcon.one() %}
+                            {% if formModuleformIcon %}
+                                 <img src="{{ formModuleformIcon.url }}" alt="{{ formModuleformIcon.title }}">
+                            {% endif %}
+                            {% if block.formModuleformName %}  
+                                <span>{{ block.formModuleformName }}</span>
+                            {% endif %} 
+                        </div>
+                        {# {% include "contact/_formembed_moving" %} #} 
+
+                            {% if block.selectForm  %}
+                
+                                {% set  selectForm = block.selectForm %}   
+                                    {# {{ dump(selectForm.handle) }}  #}
+                                {{ craft.freeform.form(selectForm.handle).render() }}  
+                                
+                            {% else %}
+                                  {{ footer.formEmbedMoving | raw }}
+                            {% endif %} 
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{# <script src="{{ siteUrl }}assets/js/form.js"></script> #}

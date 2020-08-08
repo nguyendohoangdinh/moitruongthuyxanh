@@ -1,0 +1,73 @@
+<div class="listcard listcard-ri">
+    <div class="container">
+        <div class="listcard-wapper-section">
+
+          
+            <div class="title-listcard-wapper">  
+                    <div class="title-listcard-wapper-left">
+                         <div class="title-listcard-left-icon">
+                                {% set listcardicon = entry.titleIconRI.one() %}
+                                {% if listcardicon %}
+                                     <img src="{{ listcardicon.url  }}"  alt="{{ listcardicon.title }}">
+                                {% endif %}
+                         </div>
+                          <div class="title-listcard-left-copy">
+                                {% if entry.titleSectionRI %}
+                                    <h2 class="listcard-title">{{ entry.titleSectionRI }}</h2>
+                                {% endif %}
+                                  {% if entry.subtileSectionRI %}
+                                    <h5 class="listcard-subtile">{{ entry.subtileSectionRI }}</h5>
+                                {% endif %}
+                         </div>
+                    </div>
+
+                     <div class="title-listcard-wapper-right">
+                            {% set buttonSeeAll = entry.buttonSeeAllRI %}
+                            {% if buttonSeeAll %}
+                                <a href="{{ entry.buttonSeeAllUrlRI }}" class="lpe-button type-2 "> {{ buttonSeeAll }}  </a>
+                            {% endif %}   
+                    </div>
+
+             </div>   
+            <div class="itemtab-listcard-wapper-content">  
+                <div class="row10">  
+
+                        {% for entry in craft.entries.relatedTo(craft.categories.slug('thietkethicong')).limit(3) %}
+
+                           
+                            <div class="column3 item-listcard-wapper">  
+                                <a href="{{ entry.url }}">
+                                {% set  buttonIconLGI  = entry.featuredImages.one() %}
+                                {% if buttonIconLGI %}
+                                      <img src="{{ buttonIconLGI.url  }}"  alt="{{ buttonIconLGI.title }}">
+                                {% endif %}
+                                </a>
+                                <p class="listcard-date">{{ entry.postDate | date("M - d - Y") }}</p>
+                                <a href="/"><h5>{{ entry.title }}</h5></a>
+                                <p>{{ entry.descriptionblog }}</p>
+                            </div>   
+
+                        {% endfor %}
+                    {# <div class="column3 item-listcard-wapper">  
+                         <a href="/"><img src="/uploads/images/listcard1.png" alt="Blurb"></a>
+                         <p class="listcard-date">04 - 04 - 2020</p>
+                         <a href="/"><h5>Solar Solutions</h5></a>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean augue enim et aliquet cursus.</p>
+                    </div>  
+                    <div class="column3 item-listcard-wapper">  
+                         <a href="/"><img src="/uploads/images/listcard1.png" alt="Blurb"></a>
+                         <a href="/"><h5>Solar Solutions</h5></a>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean augue enim et aliquet cursus.</p>
+                    </div>  
+                    <div class="column3 item-listcard-wapper">  
+                         <a href="/"><img src="/uploads/images/listcard1.png" alt="Blurb"></a>
+                         <a href="/"><h5>Solar Solutions</h5></a>
+                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean augue enim et aliquet cursus.</p>
+                    </div>   #}
+
+                </div>    
+            </div>    
+
+        </div>
+    </div>
+</div>

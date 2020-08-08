@@ -1,0 +1,18 @@
+<div class="textColumn textColumn-module">
+
+	<div class="container">
+
+		{% set textColumnnumberOfColumns = block.textColumnnumberOfColumns  %}
+		<div class="textColumn-wapper number-{{ textColumnnumberOfColumns }}">
+			{% for block in block.editorContent.all() %}
+				{% if block.textincolumn   %}
+					<div class="item-col">
+						{{ block.textincolumn }}
+					</div>
+				{% endif %}
+
+			{% endfor %}
+		</div>
+	</div>
+
+</div>

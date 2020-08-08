@@ -1,0 +1,24 @@
+<div class="image-module {{ block.imageLeftRightlayout }}">  
+
+	<div class="container">
+        <div class="row10">
+            <div class="column6 image-module-image"> 
+
+                {% set imageLeftRightimage = block.imageLeftRightimage.one() %}
+                {% if imageLeftRightimage %}
+                    <img src="{{ imageLeftRightimage.getUrl({ width: 610, height: 320 }) }}" alt="{{ imageLeftRightimage.title }}">
+                {% endif %}
+
+            </div>
+        
+            <div class="column6 image-module-content">
+
+                    {% set imageLeftRightcontent = block.imageLeftRightcontent %}
+                    {% if imageLeftRightcontent %} 
+                            {{ imageLeftRightcontent }} 
+                    {% endif %} 
+
+            </div> 
+	    </div> 
+    </div> 
+</div>

@@ -1,0 +1,145 @@
+{#
+ # News entry template
+ # -------------------
+ #
+ # This template gets loaded whenever a News entry's URL is requested, because
+ # the News section's Template setting is set to "news/_entry".
+ #
+ # An `entry` variable will be automatically passed to this template, which will
+ # be set to the requested News entry.
+-#}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+    {# <div id="slider"> 
+        <!--    Start: Buttons-->
+        <button class="control_next"><i class="fa fa-chevron-right"></i></button>
+        <button class="control_prev"><i class="fa fa-chevron-left"></i></button>
+        <!--    End: Buttons-->
+        <!--    Start: Images-->
+        <ul class="image_slider_ul">
+            {% set images = entry.imageContent.all() %}
+            {% for image in images %}
+            <li>
+            <div class="bgimage">
+                <img src="{{ image.getUrl("banner") }}" alt="{{ image.title }}">
+            </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <!--    End: Images-->
+        <!--    Start: Indicators-->
+        <div class="indicator_con">
+            <ul class="indicator"></ul>
+        </div>
+        <!--    End Indicators-->
+        </div> #}
+
+    <div class="hero-banner"> 
+        {% set rel = entry.imageContent.one() %}
+        {% if rel %}
+            <div class="bg-hero-banner" style="background-image: url({{rel.url }});"> </div>
+        {% endif %}
+        <div class="container"> 
+            <div class="hero-banner-info">
+                
+                {% set bannertitle = entry.bannertitle %}
+                {% if bannertitle %}
+                    <h2 class="h1"> {{ bannertitle }}  </h2>
+                {% endif %}
+
+                {% set bannerDescription = entry.bannerDescription %}
+                {% if bannerDescription %}
+                    <p class="hero-banner-des"> {{ bannerDescription }}  </p>
+                {% endif %}   
+            </div>
+        </div>
+
+    </div>
+    <div class="contact-form" style="padding: 15px 0 0px">
+        <div class="container">
+            <h2 class="contact-form-title">{{ entry.title }}</h2>
+            <div class="row">
+                <div class="accordian  type-{{ entry.layouttab }}">
+                    <div class="container">
+                        <div class="accordian-wapper">
+                            {% if entry.titlewhylpe %}
+                                <h2 class="accordian-ttile">{{ entry.titlewhylpe }}</h2>
+                            {% endif %}
+                            <div class="itemtab-accordian-wapper">  
+                                {% for block in entry.itemtab.all() %}
+
+                                    {% if block.type == "item" %} 
+                                                <div class="accordian-nav-item {% if loop.index == 1 %} actived {% endif %}" data-tab="{{ loop.index }}">  
+                                                    {% if block.titletab %}
+                                                            <span class="lpe-button accordian-titletab">{{ block.titletab }}</span>
+                                                    {% endif %}
+                                                </div>  
+                                    {% endif %}
+
+                                {% endfor %}
+                            </div> 
+                            <div class="itemtab-accordian-wapper-content" style="padding-top:60px">  
+                                {% for block in entry.itemtab.all() %}
+
+                                    {% if block.type == "item" %}
+                                        <div class="accordian-item accordian-content-item-{{ loop.index }} {% if loop.index == 1 %} actived {% endif %}"> 
+                                            <div class="accordian-item-imagetab-wapper"> 
+                                                {% set accordianicon = block.imagetab.one() %}
+                                                {% if accordianicon %}
+                                                    <img src="{{ accordianicon.url  }}"  alt="{{ accordianicon.title }}">
+                                                {% endif %}
+                                            </div>
+                                            <div class="accordian-item-imagetab" style="display:inline"> 
+                                                <div class="accordian-item-content" style="padding-top:15px"> 
+                                                        {% if block.subtitletab %}
+                                                            <h3 class="accordian-subttile">{{ block.subtitletab }}</h3>
+                                                        {% endif %}
+
+                                                        {% if block.descriptiontab %}
+                                                            <div class="accordian-descriptiontab img-description-detail">{{ block.descriptiontab }}</div>
+                                                        {% endif %} 
+
+                                                        {% if block.additionalNotes1 %}
+                                                            {% set additionalNotes1Icon = block.additionalNotes1Icon.one() %}
+                                                            {% if additionalNotes1Icon %} 
+                                                                <div class="accordian-descriptiontab">
+                                                                    <img src="{{ additionalNotes1Icon.url  }}"  alt="{{ additionalNotes1Icon.title }}"> 
+                                                                    <span>{{ block.additionalNotes1 }}</span>
+                                                                </div>
+                                                            {% endif %}
+                                                        {% endif %} 
+
+                                                        {% if block.additionalNotes2 %}
+                                                            {% set additionalNotes2Icon = block.additionalNotes2Icon.one() %}
+                                                            {% if additionalNotes2Icon %} 
+                                                                <div class="accordian-descriptiontab">
+                                                                    <img src="{{ additionalNotes2Icon.url  }}"  alt="{{ additionalNotes2Icon.title }}"> 
+                                                                    <span>{{ block.additionalNotes2 }}</span>
+                                                                </div>
+                                                            {% endif %}
+                                                        {% endif %} 
+
+                                                        {% if block.additionalNotes3 %}
+                                                            {% set additionalNotes3Icon = block.additionalNotes3Icon.one() %}
+                                                            {% if additionalNotes3Icon %} 
+                                                                <div class="accordian-descriptiontab">
+                                                                    <img src="{{ additionalNotes3Icon.url  }}"  alt="{{ additionalNotes3Icon.title }}"> 
+                                                                    <span>{{ block.additionalNotes3 }}</span>
+                                                                </div>
+                                                            {% endif %}
+                                                        {% endif %}  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

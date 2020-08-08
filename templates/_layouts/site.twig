@@ -1,0 +1,140 @@
+{#
+
+ # The site layout template
+ # ------------------------
+ #
+ # This layout template extends the _layouts/base.html layout, and defines the
+ # main site layout: the header, footer, and main content area.
+ #
+ # It’s never accessed directly. Instead it is extended by all of our main site
+ # templates.
+ #
+ # This template defines one block region, `main`, which should be extended by
+ # child templates to define the main contents for the page.
+-#}
+
+{% extends "_layouts/base" %}
+
+{# Define the site navigation #}
+{% set nav = {
+	about:    { title: "The Brewery", desc: "About Us" },
+	services: { title: "How It’s Made", desc: "Services" },
+	work:     { title: "What’s On Tap", desc: "Our Work" },
+	news:     { title: "Brew News", desc: "The Latest" }
+} %}
+
+{# Set the `bodyClass` variable to the entry's section handle if there is one,
+   or the first URI segment (this is used by the parent template) #}
+{# {% if bodyClass is not defined %}
+	{% set bodyClass = entry is defined ? entry.section.handle : craft.app.request.segments|first %}
+{% endif %} #}
+
+{# Set the `title` variable to the nav item that matches the first segment #}
+{# {% if nav[bodyClass] is defined %}
+	{% set title %}{% if title is defined %}{{ title }} - {% endif %}{{ nav[bodyClass].title }}{% endset %}
+{% endif %} #}
+
+
+{% block body %}
+	
+	<header id="header" class="site-header">
+		<div id="top-bar" class="top-bar">
+			<div class="container">
+				<div class="top-bar-wapper">
+					<div class="top-bar-flex12">
+						<div class="top-bar-menu"> 
+
+							<ul class="nav-top-bar">		
+								{% for block in header.topBarMenu %}
+									{% if block.type == "itemMenu" %}
+
+										<li><a href="{{ block.urlmenu }}">{{ block.label }}</a></li> 
+
+									{% endif %}
+									
+								{% endfor %}
+							</ul>
+						</div>
+						<div id="search">
+							<form action="{{ url('search/results') }}" class="search-form">
+								<input class="inputsearch" type="search" name="q" placeholder="Search">
+								<input type="submit" value="Submit">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<div class="header-main">
+			<div class="container">
+				<div class="header-wapper">
+					<h1 class="header-logo"><a href="{{ siteUrl }}"> {% if header.logo|length %}  <img class="logowhite" src="{{ header.logoWhite.first.getUrl() }}" alt="{{ siteName }}" /> <img class="logoimage"  src="{{ header.logo.first.getUrl() }}" alt="{{ siteName }}" />{% else %} {{ siteName }}  {% endif %} </a></h1>
+					<div class="mainmenu"> 
+							{# <div class="visible-mb button-close-menu"> <span class="button-close-menu-icon"></span></div> #}
+						{% set navigations = craft.entries().section('navigation').all() %} 
+						<ul id="navigation">
+						{% nav navigation in navigations %}
+							<li>
+								<a href="{{navigation.navigationUrl}}">{{navigation.title}}</a>
+								{% ifchildren %}
+									<ul class="drop-menu">
+										{% children %}
+									</ul>
+								{% endifchildren %}
+							</li>
+						{% endnav %}
+						</ul>	 	
+					</div>	 
+					<div class="header-button-join">
+						<a href="{{ header.joinButtonUrl }}">{{ header.joinButtonText }}</a>
+
+						<span id="menuopen-button" class="menuopen-button" ><span> </span><span> </span><span> </span></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main id="main" role="main">
+		{% block main %}{% endblock %}
+	</main>
+
+	<footer id="footer"  class="site-footer">
+
+			<div class="footer-top">
+				<div class="container">
+				<div class="footer-top-wapper">
+					<div class="footer-top-menus">
+					{% set entry = craft.entries().section('homepage').one() %}
+						<h3 class="contact-form-title" style="color: #37b4e4">Địa chỉ</h3>
+						<p class="sub-contactform"><img src="/uploads/images/home-icon.svg" alt="address">&nbsp;&nbsp;{{ entry.address }}</p>
+						<p><img src="/uploads/images/_selector.svg" alt="phone">&nbsp;&nbsp;{{ entry.phone}}</p>
+						<p><img src="/uploads/images/icon1.svg" alt="mail">&nbsp;&nbsp;{{ entry.email}}</p>
+					</div>
+
+					{# <div class="contact-button">
+					  <a class="lpe-button" href="{{ footer.buttonUrl }}">{{ footer.buttonText }}</a>
+ 
+					</div> #}
+				</div>
+				</div>
+			</div>
+			<div class="footer-copyright-notice">
+			<div class="container">
+			<div class="copyright-notice-wapper">
+				{% set navigationSubFooters = craft.entries().section('subNavigationFooter').all() %}
+				<ul class="copyright-nav">
+					{% nav navigationSubFooter in navigationSubFooters %}
+						<li>
+							<a href="{{navigationSubFooter.subNavigationFooterUrl}}">{{navigationSubFooter.title}}</a> 
+						</li>
+					{% endnav %}
+				</ul>	
+
+				<p class="copyright">{{ footer.copyrightNotice|replace('{year}', now|date('Y')) }}</p> 
+			</div> 
+			</div> 
+			</div> 
+		</div>
+	</footer>
+{% endblock %}

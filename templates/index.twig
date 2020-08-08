@@ -1,0 +1,129 @@
+{#
+ # Homepage template
+ # -----------------
+ # 
+-#}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+
+    <div class="hero-banner hero-banner-info"> 
+        <div class="intro-slideshow">
+            {% set rel = entry.backgroundimage.all() %}
+            {% for rels in rel %}
+               <img src="{{ rels.getUrl() }}">
+            {% endfor %}
+        </div>
+        
+	    <div class="intro-header container">
+             {% set bannertitle = entry.bannertitle %}
+                {% if bannertitle %}
+                    <h1 class="title-h1"> {{ bannertitle }}  </h1>
+                {% endif %}
+
+                {% set bannerDescription = entry.bannerDescription %}
+                {% if bannerDescription %}
+                    <p class="hero-banner-des"> {{ bannerDescription }}  </p>
+                {% endif %} 
+             <div class="hero-banner-button"> 
+                    {% set buttonText1 = entry.buttonText1 %}
+                    {% if buttonText1 %}
+                        <a href="{{ entry.buttonUrl1 }}" class="lpe-button"> {{ buttonText1 }}  </a>
+                    {% endif %}   
+            </div>
+        </div>
+        {# <div class="container"> 
+            <div class="hero-banner-info">
+                
+                {% set bannertitle = entry.bannertitle %}
+                {% if bannertitle %}
+                    <h2 class="h1"> {{ bannertitle }}  </h2>
+                {% endif %}
+
+                {% set bannerDescription = entry.bannerDescription %}
+                {% if bannerDescription %}
+                    <p class="hero-banner-des"> {{ bannerDescription }}  </p>
+                {% endif %}   
+
+                
+            
+                    <div class="hero-banner-button"> 
+                            {% set buttonText1 = entry.buttonText1 %}
+                            {% if buttonText1 %}
+                                <a href="{{ entry.buttonUrl1 }}" class="lpe-button"> {{ buttonText1 }}  </a>
+                            {% endif %}   
+                    </div>
+            </div>
+		</div> #}
+         {# <div class="container container-narrow">  
+         <div class="container-narrow-wapper">  
+                {% for block in entry.narrowItem.all() %}
+
+                    {% if block.type == "item" %}
+                        <div class="narrow-item">
+                            <a href="{{ block.urlitem  }}">
+                                <div class="narrow-item-icon"> 
+                                {% set narrowicon = block.icon.one() %}
+                                {% if narrowicon %}
+                                     <img src="{{ narrowicon.url  }}"  alt="{{ narrowicon.title }}">
+                                {% endif %}
+                                </div>
+                                <h2>{{ block.nameitem }}</h2>  
+
+                            </a>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+         </div>
+         </div> #}
+	</div>
+
+    
+    {% include "_includes/accordian" %}
+
+    {% include "_includes/listcard" %}
+    {% include "_includes/leadgen" %}
+    {% include "_includes/resources_information" %}
+    {% include "_includes/leadgen-image" %}
+    {% include "contact/_contact_us" %}
+    {# {% include "contact/_include/_contact_us" %} #}
+
+	{# <section id="testimonials">
+		<div class="flex">
+			{% for block in entry.testimonials.all() %}
+				<div class="g1-flex4 g2-flex2 g3-flex4 bubble">
+					<blockquote>{{ block.quote }}</blockquote>
+					{% set photo = block.photo.one() %}
+					{% if photo %}
+						<img class="" src="{{ photo.url({ width: 84, height: 84 }) }}" alt="{{ photo.title }}">
+					{% endif %}
+					<p><cite class="gamma reverse">{{ block.cite }}</cite></p>
+				</div>
+			{% endfor %}
+		</div>
+	</section> #}
+
+	{# <section id="best-buddies">
+		<div class="flex">
+			<div class="g1-flex4 g2-flex6 g3-flex10 g3-offset1">
+				<hr class="horz-rule alt3">
+				<a class="button-w-icon alt2 icon-beercan">Our best Drinking Buddies</a>
+				<ul class="logos">
+					{% for logo in entry.clientLogos.all() %}
+						<li>
+							<img src="{{ logo.getUrl() }}" alt="logo.title"/>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<div class="flex">
+			<div class="g1-flex4 g2-flex6 g3-flex10 g3-offset1">
+				<h1 class="beta center">Some Partners Make it all worth while</h1>
+				<h2 class="subfont delta center">Robin Richards &middot; President, Happy Lager</h2>
+			</div>
+		</div>
+	</section> #}
+{% endblock %}

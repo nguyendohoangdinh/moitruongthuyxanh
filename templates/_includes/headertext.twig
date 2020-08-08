@@ -1,0 +1,30 @@
+  
+<div class="listcard module-block listcard lightblue-{{ block.backgroundLightBlue }} darkcolor-{{ block.darkcolorheadertext }} marginBottom-{{ block.marginBottom }} margintop-{{ block.marginTop }}">
+    <div class="container">
+            <div class="title-listcard-wapper">  
+                <div class="title-listcard-wapper-left">
+                        <div class="title-listcard-left-icon">
+                            {% set listcardicon = block.HeaderTexticon.one() %}
+                            {% if listcardicon %}
+                                 <img src="{{ listcardicon.url  }}"  alt="{{ listcardicon.title }}">
+                            {% endif %}
+                        </div>
+                        <div class="title-listcard-left-copy">
+                            {% if block.headerText %}
+                                <h2 class="listcard-title">{{ block.headerText | raw }}</h2>
+                            {% endif %}
+                                {% if block.HeaderTextdescription %}
+                                <h5 class="listcard-subtile">{{ block.HeaderTextdescription }}</h5>
+                            {% endif %}
+                        </div>
+                </div>
+
+                    <div class="title-listcard-wapper-right">
+                        {% set HeaderTextbuttonText = block.HeaderTextbuttonText %}
+                        {% if HeaderTextbuttonText %}
+                            <a href="{{ block.HeaderTextbuttonUrl }}" class="lpe-button {% if block.darkcolorheadertext != 'yes' %} type-2 {% endif %}"> {{ HeaderTextbuttonText }} </a>
+                        {% endif %}   
+                    </div> 
+            </div>
+    </div>   
+</div>

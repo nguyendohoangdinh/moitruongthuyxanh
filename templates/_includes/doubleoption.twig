@@ -1,0 +1,67 @@
+<div id="need-info" class="need-info">
+	<div class="container">		
+		<div class="row">
+			<div class="col-lg-6 col-md-12 image-left">
+                {% set imageDoubleOption = block.imageDoubleOption.one() %}
+                {% if imageDoubleOption %}
+                     <img src="{{ imageDoubleOption.url }}" alt="{{ imageDoubleOption.title }}"> 
+                {% endif %} 
+			</div>
+			<div class="col-lg-6 col-md-12 content-right">
+                <div class="content-text">
+					    {% set option1Icon = block.option1Icon.one() %}
+                        {% if option1Icon %}
+                             <img src="{{ option1Icon.url }}" alt="{{ option1Icon.title }}"> 
+                        {% endif %} 
+                    <div class='title-detail'>
+                        {% if block.option1DoubleOption %}  
+                            <h3>{{ block.option1DoubleOption }}</h3>
+                        {% endif %}  
+
+                        {% if block.option1Description %}  
+                            <p>{{ block.option1Description }}</p>
+                        {% endif %}   
+
+                    </div>
+				</div>
+
+                <div class="content-btn">
+
+                    {% for block in block.option1Buttons.all() %}  
+                            {% if block.optionstyle == 'white' %} 
+                                        <a href="{{  block.buttonUrloption }}" class="lpe-button type-2">{{  block.buttonTextoption }}</a>  
+                            {% else %}    
+                                        <a href="{{  block.buttonUrloption }}" class="lpe-button">{{  block.buttonTextoption }}</a>
+                            {% endif %}  
+                    {% endfor %} 
+
+                </div>
+                <div class="content-text">
+					    {% set option2Icon = block.option2Icon.one() %}
+                        {% if option2Icon %}
+                             <img src="{{ option2Icon.url }}" alt="{{ option2Icon.title }}"> 
+                        {% endif %} 
+                    <div class='title-detail'>
+                        {% if block.option2DoubleOption %}  
+                            <h3>{{ block.option2DoubleOption }}</h3>
+                        {% endif %}  
+
+                        {% if block.option2Description %}  
+                            <p>{{ block.option2Description }}</p>
+                        {% endif %}   
+
+                    </div>
+				</div>
+                <div class="content-btn last-btn">
+                    {% for block in block.option2Buttons.all() %}  
+                            {% if block.option2style == 'white' %} 
+                                        <a href="{{  block.buttonUrloption2 }}" class="lpe-button type-2">{{  block.buttonTextoption2 }}</a>  
+                            {% else %}    
+                                        <a href="{{  block.buttonUrloption2 }}" class="lpe-button">{{  block.buttonTextoption2 }}</a>
+                            {% endif %}  
+                    {% endfor %} 
+                </div>
+            </div>
+		</div>
+	</div>
+</div>

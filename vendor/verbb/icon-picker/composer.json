@@ -1,0 +1,45 @@
+{
+    "name": "verbb/icon-picker",
+    "description": "Provide content editors a field to pick an icon from a public directory.",
+    "type": "craft-plugin",
+    "version": "1.1.1",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "icon-picker"
+    ],
+    "support": {
+        "email": "support@verbb.io",
+        "issues": "https://github.com/verbb/icon-picker/issues?state=open",
+        "source": "https://github.com/verbb/icon-picker",
+        "docs": "https://github.com/verbb/icon-picker",
+        "rss": "https://github.com/verbb/icon-picker/commits/v2.atom"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Verbb",
+            "homepage": "https://verbb.io"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0",
+        "cakephp/core": "^3.5",
+        "cakephp/utility": "^3.3.12",
+        "phenx/php-font-lib": "^0.5.0",
+        "glenscott/url-normalizer": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+          "verbb\\iconpicker\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Icon Picker",
+        "handle": "icon-picker",
+        "changelogUrl": "https://raw.githubusercontent.com/verbb/icon-picker/craft-3/CHANGELOG.md",
+        "class": "verbb\\iconpicker\\IconPicker"
+    }
+}

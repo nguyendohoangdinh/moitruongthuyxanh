@@ -1,0 +1,243 @@
+[13-Apr-2020 08:35:55 Asia/Ho_Chi_Minh] An Error occurred while handling another error:
+DOMException: Invalid Character Error in C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php:75
+Stack trace:
+#0 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php(75): DOMElement->__construct('form entries')
+#1 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(1069): yii\web\XmlResponseFormatter->format(Object(craft\web\Response))
+#2 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\Response.php(199): yii\web\Response->prepare()
+#3 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(337): craft\web\Response->prepare()
+#4 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\ErrorHandler.php(136): yii\web\Response->send()
+#5 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\ErrorHandler.php(128): yii\web\ErrorHandler->renderException(Object(DOMException))
+#6 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\base\ErrorHandler.php(123): craft\web\ErrorHandler->renderException(Object(DOMException))
+#7 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\ErrorHandler.php(61): yii\base\ErrorHandler->handleException(Object(DOMException))
+#8 [internal function]: craft\web\ErrorHandler->handleException(Object(DOMException))
+#9 {main}
+Previous exception:
+DOMException: Invalid Character Error in C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php:75
+Stack trace:
+#0 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php(75): DOMElement->__construct('form entries')
+#1 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(1069): yii\web\XmlResponseFormatter->format(Object(craft\web\Response))
+#2 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\Response.php(199): yii\web\Response->prepare()
+#3 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(337): craft\web\Response->prepare()
+#4 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Response->send()
+#5 C:\xampp\htdocs\AIdesgin\web\index.php(21): yii\base\Application->run()
+#6 {main}
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs',
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin',
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf',
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php',
+    'PHPRC' => '\\xampp\\php',
+    'TMP' => '\\xampp\\tmp',
+    'HTTP_HOST' => 'www.aidesign.local',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '964',
+    'HTTP_ORIGIN' => 'http://www.aidesign.local',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/85.0.134 Chrome/79.0.3945.134 Safari/537.36',
+    'CONTENT_TYPE' => 'application/json; charset=UTF-8',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_REFERER' => 'http://www.aidesign.local/admin/sprout-forms/entries',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+    'HTTP_COOKIE' => '1031b8c41dfff97a311a7ac99863bdc5_username=96cfdf15e317f379c594f3bfddc32f08ea8c001aae128b5f58ea6d91cf263a13a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; __stripe_mid=c78aecb0-c2c1-418b-830d-fd094b40fc2a; CRAFT_CSRF_TOKEN=08585288744dd6d3a4041eb52475bdf94a8b860218b5877c654bd40c0bd69ed1a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22S6kA2qrsSvmRou7Xd53MEOB-Vxa1wkTJYSSXOKis%7C6959584e7398e62335e064fd5f4bc2d53e32e88e286f504dda665424afa3a4a0S6kA2qrsSvmRou7Xd53MEOB-Vxa1wkTJYSSXOKis%7C1%7C%242y%2413%24YA.7RIgllODUDcmQPf%2F.FuXjOmKJYot5QxpFhhf4og9fdJWsIPWK6%22%3B%7D; CraftSessionId=g7aj21e60agceld21k9la7po8v; 1031b8c41dfff97a311a7ac99863bdc5_identity=a8897a0787948239c29246046283dadaafa79af22a361654ebae799561ae1764a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A264%3A%22%5B%221%22%2C%22%5B%5C%225szBTBQekPUj5kx3lUvJJBVzGywIjYSzGjOXohjrTzW3-H77p_XWMUNzJVW2VRSgBNqOyfbsRsej7_aU4UWqLjRJgX2xr_mJ27QP%5C%22%2Cnull%2C%5C%22Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20WOW64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20coc_coc_browser%2F85.0.134%20Chrome%2F79.0.3945.134%20Safari%2F537.36%5C%22%5D%22%2C3600%5D%22%3B%7D; __stripe_sid=9f34c83c-c975-4010-bb6b-d26557f7f7b6',
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\hoang_000\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\hoang_000\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\hoang_000\\AppData\\Local\\Programs\\Microsoft VS Code\\bin',
+    'SystemRoot' => 'C:\\WINDOWS',
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe',
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC',
+    'WINDIR' => 'C:\\WINDOWS',
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at www.aidesign.local Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3',
+    'SERVER_NAME' => 'www.aidesign.local',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '127.0.0.1',
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/AIdesgin/web',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/AIdesgin/web',
+    'SERVER_ADMIN' => 'postmaster@localhost',
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AIdesgin/web/index.php',
+    'REMOTE_PORT' => '53557',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => 'p=admin/actions/element-indexes/export',
+    'REQUEST_URI' => '/index.php?p=admin/actions/element-indexes/export',
+    'SCRIPT_NAME' => '/index.php',
+    'PHP_SELF' => '/index.php',
+    'REQUEST_TIME_FLOAT' => 1586741755.314,
+    'REQUEST_TIME' => 1586741755,
+    'ENVIRONMENT' => 'dev',
+    'SECURITY_KEY' => '4XVWWvecFBEjXhkejj4i4XB3kg1K1fgc',
+    'DB_DRIVER' => 'mysql',
+    'DB_SERVER' => 'localhost',
+    'DB_USER' => 'root',
+    'DB_PASSWORD' => '',
+    'DB_DATABASE' => 'aidesign',
+    'DB_SCHEMA' => '',
+    'DB_TABLE_PREFIX' => 'lpe',
+    'DB_PORT' => '3306',
+]
+[13-Apr-2020 08:35:57 Asia/Ho_Chi_Minh] An Error occurred while handling another error:
+DOMException: Invalid Character Error in C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php:75
+Stack trace:
+#0 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php(75): DOMElement->__construct('form entries')
+#1 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(1069): yii\web\XmlResponseFormatter->format(Object(craft\web\Response))
+#2 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\Response.php(199): yii\web\Response->prepare()
+#3 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(337): craft\web\Response->prepare()
+#4 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\ErrorHandler.php(136): yii\web\Response->send()
+#5 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\ErrorHandler.php(128): yii\web\ErrorHandler->renderException(Object(DOMException))
+#6 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\base\ErrorHandler.php(123): craft\web\ErrorHandler->renderException(Object(DOMException))
+#7 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\ErrorHandler.php(61): yii\base\ErrorHandler->handleException(Object(DOMException))
+#8 [internal function]: craft\web\ErrorHandler->handleException(Object(DOMException))
+#9 {main}
+Previous exception:
+DOMException: Invalid Character Error in C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php:75
+Stack trace:
+#0 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php(75): DOMElement->__construct('form entries')
+#1 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(1069): yii\web\XmlResponseFormatter->format(Object(craft\web\Response))
+#2 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\Response.php(199): yii\web\Response->prepare()
+#3 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(337): craft\web\Response->prepare()
+#4 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Response->send()
+#5 C:\xampp\htdocs\AIdesgin\web\index.php(21): yii\base\Application->run()
+#6 {main}
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs',
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin',
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf',
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php',
+    'PHPRC' => '\\xampp\\php',
+    'TMP' => '\\xampp\\tmp',
+    'HTTP_HOST' => 'www.aidesign.local',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '964',
+    'HTTP_ORIGIN' => 'http://www.aidesign.local',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/85.0.134 Chrome/79.0.3945.134 Safari/537.36',
+    'CONTENT_TYPE' => 'application/json; charset=UTF-8',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_REFERER' => 'http://www.aidesign.local/admin/sprout-forms/entries',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+    'HTTP_COOKIE' => '1031b8c41dfff97a311a7ac99863bdc5_username=96cfdf15e317f379c594f3bfddc32f08ea8c001aae128b5f58ea6d91cf263a13a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; __stripe_mid=c78aecb0-c2c1-418b-830d-fd094b40fc2a; CRAFT_CSRF_TOKEN=08585288744dd6d3a4041eb52475bdf94a8b860218b5877c654bd40c0bd69ed1a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22S6kA2qrsSvmRou7Xd53MEOB-Vxa1wkTJYSSXOKis%7C6959584e7398e62335e064fd5f4bc2d53e32e88e286f504dda665424afa3a4a0S6kA2qrsSvmRou7Xd53MEOB-Vxa1wkTJYSSXOKis%7C1%7C%242y%2413%24YA.7RIgllODUDcmQPf%2F.FuXjOmKJYot5QxpFhhf4og9fdJWsIPWK6%22%3B%7D; CraftSessionId=g7aj21e60agceld21k9la7po8v; 1031b8c41dfff97a311a7ac99863bdc5_identity=a8897a0787948239c29246046283dadaafa79af22a361654ebae799561ae1764a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A264%3A%22%5B%221%22%2C%22%5B%5C%225szBTBQekPUj5kx3lUvJJBVzGywIjYSzGjOXohjrTzW3-H77p_XWMUNzJVW2VRSgBNqOyfbsRsej7_aU4UWqLjRJgX2xr_mJ27QP%5C%22%2Cnull%2C%5C%22Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20WOW64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20coc_coc_browser%2F85.0.134%20Chrome%2F79.0.3945.134%20Safari%2F537.36%5C%22%5D%22%2C3600%5D%22%3B%7D; __stripe_sid=9f34c83c-c975-4010-bb6b-d26557f7f7b6',
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\hoang_000\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\hoang_000\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\hoang_000\\AppData\\Local\\Programs\\Microsoft VS Code\\bin',
+    'SystemRoot' => 'C:\\WINDOWS',
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe',
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC',
+    'WINDIR' => 'C:\\WINDOWS',
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at www.aidesign.local Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3',
+    'SERVER_NAME' => 'www.aidesign.local',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '127.0.0.1',
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/AIdesgin/web',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/AIdesgin/web',
+    'SERVER_ADMIN' => 'postmaster@localhost',
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AIdesgin/web/index.php',
+    'REMOTE_PORT' => '53560',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => 'p=admin/actions/element-indexes/export',
+    'REQUEST_URI' => '/index.php?p=admin/actions/element-indexes/export',
+    'SCRIPT_NAME' => '/index.php',
+    'PHP_SELF' => '/index.php',
+    'REQUEST_TIME_FLOAT' => 1586741757.504,
+    'REQUEST_TIME' => 1586741757,
+    'ENVIRONMENT' => 'dev',
+    'SECURITY_KEY' => '4XVWWvecFBEjXhkejj4i4XB3kg1K1fgc',
+    'DB_DRIVER' => 'mysql',
+    'DB_SERVER' => 'localhost',
+    'DB_USER' => 'root',
+    'DB_PASSWORD' => '',
+    'DB_DATABASE' => 'aidesign',
+    'DB_SCHEMA' => '',
+    'DB_TABLE_PREFIX' => 'lpe',
+    'DB_PORT' => '3306',
+]
+[13-Apr-2020 08:36:00 Asia/Ho_Chi_Minh] An Error occurred while handling another error:
+DOMException: Invalid Character Error in C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php:75
+Stack trace:
+#0 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php(75): DOMElement->__construct('form entries')
+#1 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(1069): yii\web\XmlResponseFormatter->format(Object(craft\web\Response))
+#2 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\Response.php(199): yii\web\Response->prepare()
+#3 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(337): craft\web\Response->prepare()
+#4 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\ErrorHandler.php(136): yii\web\Response->send()
+#5 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\ErrorHandler.php(128): yii\web\ErrorHandler->renderException(Object(DOMException))
+#6 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\base\ErrorHandler.php(123): craft\web\ErrorHandler->renderException(Object(DOMException))
+#7 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\ErrorHandler.php(61): yii\base\ErrorHandler->handleException(Object(DOMException))
+#8 [internal function]: craft\web\ErrorHandler->handleException(Object(DOMException))
+#9 {main}
+Previous exception:
+DOMException: Invalid Character Error in C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php:75
+Stack trace:
+#0 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\XmlResponseFormatter.php(75): DOMElement->__construct('form entries')
+#1 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(1069): yii\web\XmlResponseFormatter->format(Object(craft\web\Response))
+#2 C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\web\Response.php(199): yii\web\Response->prepare()
+#3 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\web\Response.php(337): craft\web\Response->prepare()
+#4 C:\xampp\htdocs\AIdesgin\vendor\yiisoft\yii2\base\Application.php(392): yii\web\Response->send()
+#5 C:\xampp\htdocs\AIdesgin\web\index.php(21): yii\base\Application->run()
+#6 {main}
+$_SERVER = [
+    'MIBDIRS' => 'C:/xampp/php/extras/mibs',
+    'MYSQL_HOME' => '\\xampp\\mysql\\bin',
+    'OPENSSL_CONF' => 'C:/xampp/apache/bin/openssl.cnf',
+    'PHP_PEAR_SYSCONF_DIR' => '\\xampp\\php',
+    'PHPRC' => '\\xampp\\php',
+    'TMP' => '\\xampp\\tmp',
+    'HTTP_HOST' => 'www.aidesign.local',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '959',
+    'HTTP_ORIGIN' => 'http://www.aidesign.local',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/85.0.134 Chrome/79.0.3945.134 Safari/537.36',
+    'CONTENT_TYPE' => 'application/json; charset=UTF-8',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_REFERER' => 'http://www.aidesign.local/admin/sprout-forms/entries',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5',
+    'HTTP_COOKIE' => '1031b8c41dfff97a311a7ac99863bdc5_username=96cfdf15e317f379c594f3bfddc32f08ea8c001aae128b5f58ea6d91cf263a13a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_username%22%3Bi%3A1%3Bs%3A5%3A%22admin%22%3B%7D; __stripe_mid=c78aecb0-c2c1-418b-830d-fd094b40fc2a; CRAFT_CSRF_TOKEN=08585288744dd6d3a4041eb52475bdf94a8b860218b5877c654bd40c0bd69ed1a%3A2%3A%7Bi%3A0%3Bs%3A16%3A%22CRAFT_CSRF_TOKEN%22%3Bi%3A1%3Bs%3A208%3A%22S6kA2qrsSvmRou7Xd53MEOB-Vxa1wkTJYSSXOKis%7C6959584e7398e62335e064fd5f4bc2d53e32e88e286f504dda665424afa3a4a0S6kA2qrsSvmRou7Xd53MEOB-Vxa1wkTJYSSXOKis%7C1%7C%242y%2413%24YA.7RIgllODUDcmQPf%2F.FuXjOmKJYot5QxpFhhf4og9fdJWsIPWK6%22%3B%7D; CraftSessionId=g7aj21e60agceld21k9la7po8v; 1031b8c41dfff97a311a7ac99863bdc5_identity=a8897a0787948239c29246046283dadaafa79af22a361654ebae799561ae1764a%3A2%3A%7Bi%3A0%3Bs%3A41%3A%221031b8c41dfff97a311a7ac99863bdc5_identity%22%3Bi%3A1%3Bs%3A264%3A%22%5B%221%22%2C%22%5B%5C%225szBTBQekPUj5kx3lUvJJBVzGywIjYSzGjOXohjrTzW3-H77p_XWMUNzJVW2VRSgBNqOyfbsRsej7_aU4UWqLjRJgX2xr_mJ27QP%5C%22%2Cnull%2C%5C%22Mozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20WOW64%29%20AppleWebKit%2F537.36%20%28KHTML%2C%20like%20Gecko%29%20coc_coc_browser%2F85.0.134%20Chrome%2F79.0.3945.134%20Safari%2F537.36%5C%22%5D%22%2C3600%5D%22%3B%7D; __stripe_sid=9f34c83c-c975-4010-bb6b-d26557f7f7b6',
+    'PATH' => 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\xampp\\php;C:\\ProgramData\\ComposerSetup\\bin;C:\\Users\\hoang_000\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\hoang_000\\AppData\\Roaming\\Composer\\vendor\\bin;C:\\Users\\hoang_000\\AppData\\Local\\Programs\\Microsoft VS Code\\bin',
+    'SystemRoot' => 'C:\\WINDOWS',
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe',
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC',
+    'WINDIR' => 'C:\\WINDOWS',
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3 Server at www.aidesign.local Port 80</address>
+',
+    'SERVER_SOFTWARE' => 'Apache/2.4.41 (Win64) OpenSSL/1.1.1c PHP/7.4.3',
+    'SERVER_NAME' => 'www.aidesign.local',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '127.0.0.1',
+    'DOCUMENT_ROOT' => 'C:/xampp/htdocs/AIdesgin/web',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/xampp/htdocs/AIdesgin/web',
+    'SERVER_ADMIN' => 'postmaster@localhost',
+    'SCRIPT_FILENAME' => 'C:/xampp/htdocs/AIdesgin/web/index.php',
+    'REMOTE_PORT' => '53565',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => 'p=admin/actions/element-indexes/export',
+    'REQUEST_URI' => '/index.php?p=admin/actions/element-indexes/export',
+    'SCRIPT_NAME' => '/index.php',
+    'PHP_SELF' => '/index.php',
+    'REQUEST_TIME_FLOAT' => 1586741760.361,
+    'REQUEST_TIME' => 1586741760,
+    'ENVIRONMENT' => 'dev',
+    'SECURITY_KEY' => '4XVWWvecFBEjXhkejj4i4XB3kg1K1fgc',
+    'DB_DRIVER' => 'mysql',
+    'DB_SERVER' => 'localhost',
+    'DB_USER' => 'root',
+    'DB_PASSWORD' => '',
+    'DB_DATABASE' => 'aidesign',
+    'DB_SCHEMA' => '',
+    'DB_TABLE_PREFIX' => 'lpe',
+    'DB_PORT' => '3306',
+]
+[14-Apr-2020 09:32:48 Asia/Ho_Chi_Minh] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\elements\db\ElementQuery.php on line 559
+[15-Apr-2020 00:22:52 Asia/Ho_Chi_Minh] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\services\Deprecator.php on line 88
+[15-Apr-2020 00:26:05 Asia/Ho_Chi_Minh] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\AIdesgin\vendor\craftcms\cms\src\elements\db\ElementQuery.php on line 1846

@@ -1,0 +1,82 @@
+/* Content selection */
+
+.craftcms-theme .fr-wrapper ::selection {
+    background: rgba(218,90,71,0.2);
+    color: #da5a47;
+}
+.craftcms-theme .fr-wrapper ::-moz-selection {
+    background: rgba(218,90,71,0.2);
+    color: #da5a47;
+}
+
+/* Top */
+
+.craftcms-theme.fr-box.fr-basic {
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.craftcms-theme.fr-toolbar.fr-top {
+    border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+/* Top action buttons */
+
+.craftcms-theme .fr-toolbar .fr-btn-grp {
+    margin: 0 10px 0 8px;
+}
+
+.craftcms-theme .fr-toolbar .fr-command.fr-btn svg.fr-svg,
+.craftcms-theme .fr-popup .fr-command.fr-btn svg.fr-svg,
+.craftcms-theme .fr-modal .fr-command.fr-btn svg.fr-svg {
+    height: 20px;
+    width: 20px;
+    margin: 6px 5px;
+}
+
+.craftcms-theme .fr-toolbar .fr-command.fr-btn,
+.craftcms-theme .fr-popup .fr-command.fr-btn,
+.craftcms-theme .fr-modal .fr-command.fr-btn {
+    height: 32px;
+}
+
+.craftcms-theme .fr-toolbar .fr-btn-grp .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-toolbar .fr-more-toolbar .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-toolbar .fr-buttons:not(.fr-tabs) .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-popup .fr-btn-grp .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-popup .fr-more-toolbar .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-popup .fr-buttons:not(.fr-tabs) .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-modal .fr-btn-grp .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-modal .fr-more-toolbar .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path,
+.craftcms-theme .fr-modal .fr-buttons:not(.fr-tabs) .fr-command.fr-btn.fr-active:not(.fr-dropdown) svg path {
+    fill: #da5a47;
+}
+
+/* Footer */
+
+.craftcms-theme.fr-box .second-toolbar {
+    border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+}
+
+.craftcms-theme.fr-box .second-toolbar #logo {
+    display: none;
+}
+
+/* Tooltips */
+
+.craftcms-theme.fr-tooltip {
+    background: #da5a47;
+    color: #ffffff;
+}
+
+/* Table selector squares */
+
+.fr-popup .fr-table-size .fr-select-table-size > span.hover > span {
+    background: rgba(218,90,71,0.2);
+    border: solid 1px #da5a47;
+}

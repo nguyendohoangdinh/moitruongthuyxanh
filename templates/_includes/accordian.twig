@@ -1,0 +1,81 @@
+<div class="accordian  type-{{ entry.layouttab }}">
+    <div class="container">
+        <div class="accordian-wapper">
+            {% if entry.titlewhylpe %}
+                <h2 class="accordian-ttile">{{ entry.titlewhylpe }}</h2>
+            {% endif %}
+            <div class="itemtab-accordian-wapper">  
+                {% for block in entry.itemtab.all() %}
+
+                    {% if block.type == "item" %} 
+                                <div class="accordian-nav-item {% if loop.index == 1 %} actived {% endif %}" data-tab="{{ loop.index }}">  
+                                    {% if block.titletab %}
+                                            <span class="lpe-button accordian-titletab">{{ block.titletab }}</span>
+                                    {% endif %}
+                                </div>  
+                    {% endif %}
+
+                {% endfor %}
+         </div>   
+            <div class="itemtab-accordian-wapper-content">  
+                {% for block in entry.itemtab.all() %}
+
+                    {% if block.type == "item" %}
+                        <div class="accordian-item accordian-content-item-{{ loop.index }} {% if loop.index == 1 %} actived {% endif %}"> 
+                                <div class="accordian-item-imagetab"> 
+                                    <div class="accordian-item-imagetab-wapper"> 
+                                            {% set accordianicon = block.imagetab.one() %}
+                                            {% if accordianicon %}
+                                                 <img src="{{ accordianicon.url  }}"  alt="{{ accordianicon.title }}">
+                                            {% endif %}
+                                    </div>
+                                    <div class="accordian-item-content"> 
+                                            {% if block.subtitletab %}
+                                                <h3 class="accordian-subttile">{{ block.subtitletab }}</h3>
+                                            {% endif %}
+
+                                            {% if block.descriptiontab %}
+                                                <div class="accordian-descriptiontab">{{ block.descriptiontab }}</div>
+                                            {% endif %} 
+
+                                            <p class="additional-notes">{{entry.additionalNotes}}</p>
+                                            {% if block.additionalNotes1 %}
+                                                {% set additionalNotes1Icon = block.additionalNotes1Icon.one() %}
+                                                {% if additionalNotes1Icon %} 
+                                                    <div class="accordian-descriptiontab">
+                                                         <img src="{{ additionalNotes1Icon.url  }}"  alt="{{ additionalNotes1Icon.title }}"> 
+                                                        <span>{{ block.additionalNotes1 }}</span>
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %} 
+
+                                            {% if block.additionalNotes2 %}
+                                                {% set additionalNotes2Icon = block.additionalNotes2Icon.one() %}
+                                                {% if additionalNotes2Icon %} 
+                                                    <div class="accordian-descriptiontab">
+                                                         <img src="{{ additionalNotes2Icon.url  }}"  alt="{{ additionalNotes2Icon.title }}"> 
+                                                        <span>{{ block.additionalNotes2 }}</span>
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %} 
+
+                                            {% if block.additionalNotes3 %}
+                                                {% set additionalNotes3Icon = block.additionalNotes3Icon.one() %}
+                                                {% if additionalNotes3Icon %} 
+                                                    <div class="accordian-descriptiontab">
+                                                         <img src="{{ additionalNotes3Icon.url  }}"  alt="{{ additionalNotes3Icon.title }}"> 
+                                                        <span>{{ block.additionalNotes3 }}</span>
+                                                    </div>
+                                                {% endif %}
+                                            {% endif %}  
+                                    </div>
+                                </div>
+                        </div>
+                    {% endif %}
+
+                {% endfor %}
+         </div>    
+
+        </div>
+    </div>
+</div>

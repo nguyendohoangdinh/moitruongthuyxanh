@@ -1,0 +1,101 @@
+{#
+ # Homepage template
+ # -----------------
+ # 
+-#}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+	<div class="page-content-wapper">
+
+		{% for block in entry.contentpage.all() %}
+
+			{% if block.type == "bannerTitle" %}
+				{% include "_includes/bannertitle" %}
+
+			{% elseif block.type == "headerText" %}
+
+				{% include "_includes/headertext" %}
+
+
+			{% elseif block.type == "postList" %}
+
+				{% include "_includes/postList" %}
+
+			{% elseif block.type == "leadgen" %}
+
+				{% include "_includes/leadgen-module" %}
+
+			{% elseif block.type == "accordian" %}
+
+				{% include "_includes/accordian-module" %}
+
+
+			{% elseif block.type == "leadgenImage" %}
+
+				{% include "_includes/leadgen-image-module" %}
+
+			{% elseif block.type == "spacing" %}
+
+				{% include "_includes/spacing" %}
+
+			{% elseif block.type == "formModule" %}
+
+				{% include "_includes/formModule" %}
+
+			{% elseif block.type == "leadgenDoubleOption" %}
+
+				{% include "_includes/doubleoption" %}
+
+			{% elseif block.type == "bulletSummary" %}
+
+				{% include "_includes/bulletSummary" %}
+
+			{% elseif block.type == "textColumn" %}
+
+				{% include "_includes/textColumn" %}
+
+			{% elseif block.type == "bannerHomepage" %}
+
+				{% include "_includes/bannerhero" %}
+
+			{% elseif block.type == "narrow" %}
+
+				{% include "_includes/narrow" %}
+
+			{% elseif block.type == "heroBanner2" %}
+
+				{% include "_includes/bannerhero2" %}
+
+			{% elseif block.type == "imageLeftRight" %}
+
+				{% include "_includes/imageLR" %}
+
+			{% elseif block.type == "cardList" %}
+
+				{% include "_includes/cardList" %}
+
+			{% endif %}
+
+		{% endfor %}
+	</div>
+        {% set topBarOption = entry.topBarOption %}
+        {% if topBarOption|length %}
+                <ul id="top-bar-option-nav">
+                {% for block in topBarOption.all() %} 
+                        {% set topbarname = block.topbarname %}
+                        {% if topbarname %}
+                                <li><a href="{{ block.topbarurl }}">{{ topbarname }}</a></li> 
+                        {% endif %}
+
+                {% endfor %} 
+                 </ul>
+        {% endif %}
+
+		 
+        {% if entry.makePayment %}
+                {{ entry.makePayment | raw }}
+        {% endif %}
+		
+{% endblock %}

@@ -1,0 +1,57 @@
+<div class="hero-banner hero-banner-2 banner-{{ block.layout }}"> 
+
+	{% set rel = block.heroBanner2image.one() %}
+	{% if rel %}
+
+        {% if block.layout == 'imageLeft' or  block.layout == 'imageRight' %} 
+		    <div class="bg-hero-banner" style="background-image: url({{ rel.getUrl({ width: 720, height: 800 }) }});"></div> 
+        {% else %} 
+            <div class="bg-hero-banner" style="background-image: url({{rel.url }});"></div> 
+        {% endif %}
+	{% endif %}
+	<div class="container">
+		<div class="hero-banner-info">
+            <div class="hero-banner-info-copy">
+
+                {% set bannersubtitle = block.heroBanner2subtitle %}
+                {% if bannersubtitle %}
+                    <h3>
+                        {{ bannersubtitle }}
+                    </h2>
+                {% endif %}
+
+                {% set bannertitle = block.heroBanner2title %}
+                {% if bannertitle %}
+                    <h2 class="h1">
+                        {{ bannertitle }}
+                    </h2>
+                {% endif %}
+
+                {% set bannerDescription = block.heroBanner2description %}
+                {% if bannerDescription %}
+                    <p class="hero-banner-des">
+                        {{ bannerDescription }}
+                    </p>
+                {% endif %}
+            </div>
+
+			<div class="hero-banner-button">
+
+                {% for block in block.heroBanner2buttons.all() %} 
+
+                        <a href="{{ block.buttonurl }}" class="lpe-button">
+                            {% set narrowicon = block.buttonicon.one() %}
+                            {% if narrowicon %}
+                                <img src="{{ narrowicon.url }}" alt="{{ narrowicon.title }}">
+                            {% endif %}
+                            {{ block.buttonname }}
+                        </a> 
+                        
+                {% endfor %}
+ 
+			</div>
+		</div>
+	</div>
+
+
+</div>

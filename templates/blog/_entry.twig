@@ -1,0 +1,58 @@
+{#
+ # News entry template
+ # -------------------
+ #
+ # This template gets loaded whenever a News entry's URL is requested, because
+ # the News section's Template setting is set to "news/_entry".
+ #
+ # An `entry` variable will be automatically passed to this template, which will
+ # be set to the requested News entry.
+-#}
+
+{% extends "_layouts/site" %}
+
+{% block main %}
+<div class="hero-banner"> 
+	{% set rel = entry.backgroundimage.one() %}
+	{% if rel %}
+		<div class="bg-hero-banner" style="background-image: url({{rel.url }});"> </div>
+	{% endif %}
+	<div class="container"> 
+		<div class="hero-banner-info">
+			
+			{% set bannertitle = entry.bannertitle %}
+			{% if bannertitle %}
+				<h2 class="h1"> {{ bannertitle }}  </h2>
+			{% endif %}
+
+			{% set bannerDescription = entry.bannerDescription %}
+			{% if bannerDescription %}
+				<p class="hero-banner-des"> {{ bannerDescription }}  </p>
+			{% endif %}   
+		</div>
+	</div>
+
+</div>
+<div class="listcard">
+    <div class="container">
+	<h1 style="margin-top: 20px;">Sản phẩm</h1>
+		<div class="itemtab-listcard-wapper-content">  
+			<div class="row10"> 	
+				{% set articles = craft.entries().section('blog').all() %}
+					{% for article in articles  %}
+					<div class="column3 item-listcard-wapper">  
+						<a href="{{ article.url }}">
+						{% set  buttonIconLGI  = article.featuredImages.one() %}
+						{% if buttonIconLGI %}
+								<img src="{{ buttonIconLGI.url }}"  alt="{{ buttonIconLGI.title }}">
+						{% endif %}
+						</a>
+						<a href="{{ article.url }}"><h5>{{ article.title }}</h5></a>
+						<p>{{ article.descriptionblog }}</p>
+					</div>  
+					{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>	
+{% endblock %}

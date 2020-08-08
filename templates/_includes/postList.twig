@@ -1,0 +1,52 @@
+<div class="listcard">
+	<div class="container">
+		<div class="itemtab-listcard-wapper-content">
+			<div class="row10">
+
+
+				{% set relatedCategories = block.postListcategory.all() %}
+				{% set showdate = block.postListshowDate %}
+
+				{% set postListbuttonText = block.postListbuttonText %}
+
+				{% set  iconButton  = block.iconButton.one() %}
+
+				{%  set numberOfColumns = block.numberOfColumns %}
+  
+
+						{% for entry in craft.entries.relatedTo(relatedCategories).limit(numberOfColumns) %}
+
+
+							<div class="column{{numberOfColumns}} postlistcol-{{numberOfColumns}} item-listcard-wapper {% if postListbuttonText %} has-button {% endif %}">
+								<a href="{{ entry.url }}">
+									{% set  buttonIconLGI  = entry.featuredImages.one() %}
+									{% if buttonIconLGI %}
+										<img class="listcard-thumbnail" src="{{ buttonIconLGI.getUrl({ width: 400 , height: 267 }) }}" alt="{{ buttonIconLGI.title }}">
+									{% endif %}
+								</a>
+
+								{% if(showdate == 'yes') %}
+									<p class="listcard-date">{{ entry.postDate | date("M - d - Y") }}</p>
+								{% endif %}
+								<a href="{{ entry.url }}">
+									<h5>{{ entry.title }}</h5>
+								</a>
+								<p>{{ entry.descriptionblog }}</p>
+								{% if postListbuttonText %}
+									<div class="listcard-button">
+										<a href="{{ entry.url }}" class="lpe-button type-2">
+											{% if iconButton %}
+												<img src="{{ iconButton.url }}" alt="{{ iconButton.title }}">
+											{% endif %}
+											{{ postListbuttonText }} 
+										</a>
+									</div>
+								{% endif %}
+							</div>
+
+						{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</div></div>

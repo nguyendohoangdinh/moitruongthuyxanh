@@ -1,0 +1,33 @@
+{#
+ # Categories template
+ # ------------------- 
+-#}
+ sada
+{# Create a category query with the 'group' parameter #}
+{% set myCategoryQuery = craft.categories() %}
+
+{# Fetch the categories #}
+{% set categories = myCategoryQuery.all() %}
+
+{# Display the navigation #}
+<ul>
+    {% nav category in categories %}
+        <li>
+            <a href="{{ category.url }}">{{ category.title }}</a>
+            {% ifchildren %}
+                <ul>
+                    {% children %}
+                </ul>
+            {% endifchildren %}
+        </li>
+    {% endnav %}
+</ul>
+{{ category }}
+
+{# Fetch all of the entries related to this category #}
+{% set entries = craft.entries.relatedTo(category).all() %}
+
+{# Output them #}
+{% for entry in entries %}
+    <a href="{{ entry.url }}">{{ entry.title }}</a>
+{% endfor %}

@@ -1,0 +1,121 @@
+{% if block.layout == 'bulletSummaryDetailedHorizontal' %}
+
+		<div id="solar-section-b-banner" class="solar-section-b-banner">
+			<div class="container">
+		
+				{% if block.bulletSummarytitle %}  
+					<h3 class="title-solar-b-banner">{{ block.bulletSummarytitle | raw }}</h3>
+				{% endif %}   
+				{% if block.bulletSummarydescription %}  
+					<p class="subtitle-solar-b-banner">{{ block.bulletSummarydescription }}</p>
+				{% endif %}  
+
+					<div class="row wrapper-row"> 
+						{% for block in block.bulletSummaryitems.all() %}  
+									<div class="col-lg-3 col-md-6">
+										<div class="wrap-col-txt">
+											<div class="title-col">
+												{% set bulletSummaryicon = block.bulletSummaryicon.one() %}
+													{% if bulletSummaryicon %}
+														<img src="{{ bulletSummaryicon.url }}" alt="{{ bulletSummaryicon.title }}"> 
+													{% endif %} 
+												<h6>{{ block.bulletSummaryitemTitle }}</h6>
+											</div>
+											<p>{{ block.bulletSummaryitemDescription }}</p>
+										</div>
+									</div>
+						{% endfor %} 
+			
+					</div>
+			</div>
+		</div>
+
+{% elseif block.layout == 'inlineBulletSummary' %}
+
+	<div  id="inline-bullet-summary" class="inline-bullet-summary">
+		<div class="container">
+			{# class:image-to-text image: left/ text:right#}
+			{# class:text-to-image text: left/ image:right#}
+			<div class="wrapper-bullet-summary">
+				<div class="col-bullet-summary col-image">
+					{% set bulletsummaryimage = block.bulletsummaryimage.one() %}
+					{% if bulletsummaryimage %}  
+						<img src="{{ bulletsummaryimage.getUrl({width: 610, height: 486 })  }}"  alt="{{ bulletsummaryimage.title }}">   
+					{% endif %}
+					{# <img src="https://via.placeholder.com/610x486" alt="placehoder image"/>			 #}
+				</div>
+				<div class="col-bullet-summary col-text">
+								{% if block.bulletSummarytitle %}  
+									<h3 class="title-inline-bullet">{{ block.bulletSummarytitle | raw }}</h3>
+								{% endif %}     
+
+								{% if block.bulletSummarydescription %}  
+									<p class="desc-text">{{ block.bulletSummarydescription }}</p>
+								{% endif %}  
+					<ul class="list-benefits">
+
+						{% for block in block.bulletSummaryitems.all() %}  
+									<li> 
+										{% set bulletSummaryicon = block.bulletSummaryicon.one() %}
+										{% if bulletSummaryicon %}
+											<img src="{{ bulletSummaryicon.url }}" alt="{{ bulletSummaryicon.title }}"> 
+										{% endif %} 
+										<span>{{ block.bulletSummaryitemTitle }}</span>
+									</li> 
+						{% endfor %} 
+
+						{# <li>
+							<img src="/uploads/images/Strata.png" alt="Unique Selling Point"/>
+							<span>Unique Selling Point 1</span>
+						</li>  #}
+					</ul>
+				</div>			
+			</div>
+		</div>
+	</div>
+
+{% else  %}  
+
+	<div  id="section-bullet-summary" class="section-bullet-summary">
+		<div class="container">		
+			{# class:bullet-summary-detail #}
+			<div class="wrapper-bullet-summary {# bullet-summary-detail #} {% if block.layout == 'bulletSummaryDetailed' %} bullet-summary-detail {% endif %}">
+				<div class="col-bullet-summary bullet-summary-left">
+						{% if block.bulletSummarytitle %}  
+							<h3 class="title-bulletsummary">{{ block.bulletSummarytitle | raw }}</h3>
+						{% endif %}     
+
+						{% if block.bulletSummarydescription %}  
+							<p class="subtitle-bulletsummary">{{ block.bulletSummarydescription }}</p>
+						{% endif %} 
+				</div>
+				<div class="col-bullet-summary bullet-summary-right">
+					<h5 class="title-inline-bullet">{{ block.labelList }}</h5>				
+					<ul class="list-benefits">
+						{% for block in block.bulletSummaryitems.all() %}  
+									<li> 
+										<div class="title-benefit">
+											{% set bulletSummaryicon = block.bulletSummaryicon.one() %}
+											{% if bulletSummaryicon %}
+												<img src="{{ bulletSummaryicon.url }}" alt="{{ bulletSummaryicon.title }}"> 
+											{% endif %} 
+											<span>{{ block.bulletSummaryitemTitle }}</span>
+										</div>
+										<p>{{ block.bulletSummaryitemDescription }}</p>
+									</li> 
+						{% endfor %} 
+						{# <li>
+							<div class="title-benefit">
+								<img src="/uploads/images/Strata.png" alt="Unique Selling Point"/>
+								<span>Unique Selling Point 1</span>
+							</div>
+							<p>Lorem Ipsum</p>
+						</li>  #}
+					</ul>
+				</div>			
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+

@@ -1,0 +1,20 @@
+<div class=" container-narrow">
+	<div class="container container-narrow-wapper">
+		{% for block in block.narrowItem.all() %}
+ 
+				<div class="narrow-item">
+					<a href="{{ block.narrowurl }}">
+						<div class="narrow-item-icon">
+							{% set narrowicon = block.narrowicon.one() %}
+							{% if narrowicon %}
+								<img src="{{ narrowicon.url }}" alt="{{ narrowicon.title }}">
+							{% endif %}
+						</div>
+						<h2>{{ block.narrowname }}</h2>
+
+					</a>
+				</div> 
+
+		{% endfor %}
+	</div>
+</div>

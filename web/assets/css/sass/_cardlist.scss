@@ -1,0 +1,85 @@
+.listcard{
+	.wrapper-listcard{
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -10px;
+		margin-left: -10px;
+		.listcard-item{
+			position: relative;
+			width: 100%;
+			padding-right: 10px;
+			padding-left: 10px; 
+			margin-bottom: 20px;
+			img{
+				border-radius: 20px 20px 0px 0px;
+				width: 100%;
+			}
+			.title-listcard{
+				margin-top: 19px;
+				margin-bottom: 5px;
+
+				position: relative;
+				padding-right: 25px;
+				&:after {
+					content: '';
+					position: absolute;
+					right: 0;
+					top: 2px; 
+					background: transparent url(../images/icons/next.svg) no-repeat center;
+					background-size: cover;
+					border: none;
+					outline: none; 
+					 width: 20px;
+					 height: 20px;
+					 display: block;
+					font-size: 0;
+				}
+			}
+ 
+		}
+		&.listcard-2-column{
+			.listcard-item{ 
+				@media (min-width: 768px){ 
+					flex: 0 0 50%;
+					max-width: 50%;
+				}
+			}							
+		}
+		&.listcard-3-column{
+			.listcard-item{ 
+				@media (min-width: 768px){ 
+					flex: 0 0 33.333333%;
+					max-width: 33.333333%;
+				}
+			}							
+		}
+		&.listcard-4-column{
+			.listcard-item{ 
+				@media (min-width: 768px){ 
+					flex: 0 0 25%;
+					max-width: 25%;
+				}
+				@media (max-width: 767px){ 
+					flex: 0 0 50%;
+					max-width: 50%;
+				}
+			}	
+		}
+		&.listcard-6-column{
+			.listcard-item{ 				
+				@media (min-width: 992px){ 
+					flex: 0 0 16.666667%;
+					max-width: 16.666667%;
+				}
+				@media (min-width: 768px) and (max-width: 991px){ 
+					flex: 0 0 33.333333%;
+					max-width: 33.333333%;
+				}
+				@media (max-width: 767px){ 
+					flex: 0 0 50%;
+					max-width: 50%;
+				}
+			}	
+		}
+	}
+}

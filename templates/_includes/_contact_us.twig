@@ -1,0 +1,56 @@
+<div class="contact-form">
+    <div class="container">
+        <div class="contact-form-header">
+                {% set formModuleformNameIcon = block.formModuleformNameIcon.one() %}
+                    {% if formModuleformNameIcon %}
+                         <img src="{{ formModuleformNameIcon.url }}" alt="{{ formModuleformNameIcon.title }}">
+                    {% endif %}  
+                <div class="contact-form-header-text">
+                    {% if block.formModuletitle %} 
+                        <h2 class="contact-form-title">  
+                            {{ block.formModuletitle }}
+                        </h2>
+                    {% endif %}
+                    {% if block.formModuledescription %}  
+                        <p class="sub-contactform">{{ block.formModuledescription }}</p>
+                    {% endif %} 
+                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="title-form"> 
+                    {% set formModuleformIcon = block.formModuleformIcon.one() %}
+                    {% if formModuleformIcon %}
+                         <img src="{{ formModuleformIcon.url }}" alt="{{ formModuleformIcon.title }}">
+                    {% endif %}
+                     {% if block.formModuleformName %}  
+                        <span>{{ block.formModuleformName }}</span>
+                    {% endif %} 
+                    
+                </div>
+                {# remove style tag #} {# add col to _form-content #} 
+                {# {% include "contact/_formembed" %} #}
+                
+
+                    {% if block.selectForm  %}
+         
+                        {% set  selectForm = block.selectForm %}   
+                            {# {{ dump(selectForm.handle) }}  #}
+                        {{ craft.freeform.form(selectForm.handle).render() }}  
+                        
+                    {% else %}
+                        {{ footer.formEmbed | raw }}
+                    {% endif %} 
+
+            </div>
+            <div class="col-sm-6" id="contact-background">
+               
+                 {% set formModuleimage = block.formModuleimage.one() %}
+                    {% if formModuleimage %}
+                         <img src="{{ formModuleimage.url }}" alt="{{ formModuleimage.title }}"> 
+                    {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{ siteUrl }}assets/js/form.js"></script>

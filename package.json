@@ -1,0 +1,29 @@
+{
+  "name": "ned_fe",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"><a href=\"https://craftcms.com/\" target=\"_blank\"><img width=\"312\" height=\"90\" src=\"https://craftcms.com/craftcms.svg\" alt=\"Craft CMS\"></a></p>",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://chiubeo@bitbucket.org/bjvn/ned_fe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/bjvn/ned_fe#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cache": "^1.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.2.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-size": "^3.0.0",
+    "gulp-soften": "0.0.1",
+    "gulp-uglify": "^3.0.2"
+  }
+}

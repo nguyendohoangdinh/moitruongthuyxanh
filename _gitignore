@@ -1,0 +1,11 @@
+/.env
+/.idea
+/vendor
+
+.DS_Store
+
+#NODEJS
+/node_modules
+/web/assets/css/style.css
+/web/assets/css/style.min.css
+

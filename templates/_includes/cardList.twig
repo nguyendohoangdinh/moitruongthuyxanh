@@ -1,0 +1,61 @@
+<div id="listcard" class="listcard">
+	<div class="container">
+		<div class="wrapper-listcard listcard-{{ block.numberOfColumns }}-column"> 
+
+			{% set numberOfColumns = block.numberOfColumns %}
+			{% for block in block.editorContent.all() %}
+
+				<div class="listcard-item">
+
+						{% set editorContenturl = block.editorContenturl %}
+						{% if editorContenturl %}	
+							<a href="{{ editorContenturl }}">
+						{% endif %}		
+
+							{% set editorContentimage = block.editorContentimage.one() %}
+							{% if editorContentimage %}
+									{% if numberOfColumns == '6' %}
+										<img src="{{ editorContentimage.getUrl({width: 190, height: 168 })  }}"  alt="{{ editorContentimage.title }}">
+
+									{% elseif numberOfColumns == '4' %}
+										<img src="{{ editorContentimage.getUrl({width: 295, height: 232 })  }}"  alt="{{ editorContentimage.title }}">
+									{% else %}
+										<img src="{{ editorContentimage.getUrl({width: 400, height: 249 })  }}"  alt="{{ editorContentimage.title }}">
+									{% endif %}
+
+							{% endif %}
+							{% set editorContentimageTitle = block.editorContentimageTitle %}
+								{% if editorContentimageTitle %}	
+								<h5 class="title-listcard">{{ editorContentimageTitle }}</h5>
+							{% endif %}
+
+						{% if editorContenturl %}	
+							</a>
+						{% endif %}	
+						
+				</div>
+
+			{% endfor %}
+			{# <div class="listcard-item">
+							<img src="https://via.placeholder.com/400x249" alt="placehoder image"/>
+							<h5 class="title-listcard">Image Title</h5>
+						</div>
+						<div class="listcard-item">
+							<img src="https://via.placeholder.com/400x249" alt="placehoder image"/>
+							<h5 class="title-listcard">Image Title</h5>
+						</div>
+						<div class="listcard-item">
+							<img src="https://via.placeholder.com/400x249" alt="placehoder image"/>
+							<h5 class="title-listcard">Image Title</h5>
+						</div>
+						<div class="listcard-item">
+							<img src="https://via.placeholder.com/400x249" alt="placehoder image"/>
+							<h5 class="title-listcard">Image Title</h5>
+						</div>
+						<div class="listcard-item">
+							<img src="https://via.placeholder.com/400x249" alt="placehoder image"/>
+							<h5 class="title-listcard">Image Title</h5>
+						</div> #}
+		</div>
+	</div>
+</div>

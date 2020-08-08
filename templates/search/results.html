@@ -1,0 +1,39 @@
+{# # Search results template # ----------------------- # # This template gets loaded whenever /search/results is requested, because a # route has been set up from Settings > Routes to direct traffic to that URL # to this template. # # The search form
+in the site's global header is set up to submit search # queries to /search/results, with a `q` param in the query string containing # teh search term. This template extracts that param's value and passes it # to craft.entries' `search` param, and outputs
+the resulting entries. -#} {% extends "_layouts/site" %} {# Get the requested search term and find the matching entries #} {% set searchTerm = craft.app.request.getParam('q') %} {% set searchResults = craft.entries.search(searchTerm).orderBy('score')
+%} {% block main %}
+<div class="container">
+    <header class="alt2">
+        <div class="row">
+            <div class="col-md-12 flex">
+                <div class="g1-flex4 g2-flex6 g3-flex12">
+                    <h1 class="alpha center reverse title-search">Search Results</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="alt">
+        <div class="row">
+            <div class="col-md-12 flex">
+
+                {# Were there any search results? #} {% if searchResults|length %}
+                <div class="g1-flex4 g2-flex6 g3-flex8 g3-offset2">
+                    <h4 class="beta center">{{ searchResults|length }} results</h4>
+                </div>
+
+                {# Loop through the results #} {% for entry in searchResults.all() %}
+                <div class="g1-flex4 g2-flex6 g3-flex8 g3-offset2 result-search-item">
+                    <span class="post-date">{{ entry.postDate.format('m.d.Y') }}</span>
+                    <h5 class="beta title-result-search">{{ entry.getLink() }}</h5>
+                </div>
+                {% endfor %} {# Otherwise just show a "no results" message #} {% else %}
+                <h5 class="beta center">Your search for “{{ searchTerm }}” didn’t return any results.
+                </h5>
+                {% endif %}
+
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

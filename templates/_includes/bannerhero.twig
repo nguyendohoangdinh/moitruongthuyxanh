@@ -1,0 +1,37 @@
+	<div class="hero-banner"> 
+
+        {% set rel = block.backgroundimage.one() %}
+        {% if rel %}
+            <div class="bg-hero-banner" style="background-image: url({{rel.url }});"> </div>
+        {% endif %}
+	    <div class="container"> 
+            <div class="hero-banner-info">
+                
+                {% set bannertitle = block.bannertitle %}
+                {% if bannertitle %}
+                    <h2 class="h1"> {{ bannertitle }}  </h2>
+                {% endif %}
+
+                {% set bannerDescription = block.bannerDescription %}
+                {% if bannerDescription %}
+                    <p class="hero-banner-des"> {{ bannerDescription }}  </p>
+                {% endif %}   
+
+                
+            
+                    <div class="hero-banner-button"> 
+                            {% set buttonText1 = block.buttonText1 %}
+                            {% if buttonText1 %}
+                                <a href="{{ block.buttonUrl1 }}" class="lpe-button"> {{ buttonText1 }}  </a>
+                            {% endif %}   
+
+                            {% set buttonText2 = block.buttonText2 %}
+                            {% if buttonText2 %}
+                                <a href="{{ block.buttonUrl2 }}" class="lpe-button no-bg"> {{ buttonText2 }}  </a>
+                            {% endif %}   
+                    </div>
+            </div>
+		</div>
+
+
+	</div>

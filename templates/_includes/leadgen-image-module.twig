@@ -1,0 +1,44 @@
+<div class="leadgen leadgen-image">
+
+            {% set listcardicon = block.imageLGI.one() %}
+            {% if listcardicon %}
+                <div class="leadgen-bg-image" style="background-image: url({{ listcardicon.url }});"> </div>
+            {% endif %}
+    <div class="container">
+        <div class="leadgen-wapper-section"> 
+            <div class="title-leadgen-wapper">   
+                    <div class="title-leadgen-wapper-left">
+                        
+                          <div class="title-leadgen-left-copy">
+                                {% if block.titleSectionLGI %}
+                                    <h2 class="leadgen-title">{{ block.titleSectionLGI | raw }}</h2>
+                                {% endif %}
+                                  {% if block.descriptionLGI %}
+                                    <h5 class="leadgen-subtile">{{ block.descriptionLGI }}</h5>
+                                {% endif %}
+                         </div>
+                    </div>
+                    {% set buttonStyleLGI = block.buttonStyleLGI  %}
+                     <div class="title-leadgen-wapper-right">
+                             {% for block in block.buttonsLGI.all() %}
+ 
+                                    <div class="buttonLG-item">
+                                        <a href="{{ block.buttonUrlLGI  }}" class="lpe-button white type-{{ buttonStyleLGI  }}">
+                                            <div class="buttonLG-item-icon"> 
+                                                {% set buttonIconLGI = block.buttonIconLGI.one() %}
+                                                {% if buttonIconLGI %}
+                                                     <img src="{{ buttonIconLGI.url  }}"  alt="{{ buttonIconLGI.title }}">
+                                                {% endif %}
+                                            </div> 
+                                            <div><span>{{ block.buttonTextLGI  }}</span></div>
+                                        </a>
+                                    </div> 
+
+                            {% endfor %}
+                    </div>
+
+             </div>   
+            
+        </div>
+    </div>
+</div>

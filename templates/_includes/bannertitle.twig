@@ -1,0 +1,12 @@
+<div class="bannersubtitle-section module-block bannersubtitle-section-{{ block.bannersize }}"> 
+
+            {% set rel = block.backgroundImage.one() %}
+            {% if rel %}
+                <div class="backgroundImage" style="background-image: url({{rel.url }});"> </div>
+            {% endif %}
+        <div class="container">   
+                <h3>{{ block.bannersubtitle | raw }}</h3> 
+                <h2 class=".h1">{{ block.bannertitle | raw }}</h2>   
+        </div>
+        
+</div>
