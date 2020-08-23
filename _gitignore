@@ -1,6 +1,7 @@
 /.env
 /.idea
 /vendor
+/craftcms
 
 .DS_Store
 
@@ -8,4 +9,5 @@
 /node_modules
 /web/assets/css/style.css
 /web/assets/css/style.min.css
+/web/cpresources
 
